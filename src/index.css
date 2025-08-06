@@ -1,1 +1,51 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Lora:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for better 3D printer interface */
+body {
+  font-family: 'Lora', 'Georgia', serif;
+  background: #f8fafc;
+}
+
+/* Sydra brand font for headings */
+.sydra-font {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  letter-spacing: 0.02em;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom gradient backgrounds */
+.heating-gradient {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+}
+
+.stable-gradient {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+/* Enhanced shadows */
+.card-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-shadow:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Pulsing animation for heating elements */
+@keyframes heating-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.heating-pulse {
+  animation: heating-pulse 2s ease-in-out infinite;
+}
